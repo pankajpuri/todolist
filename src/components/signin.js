@@ -75,6 +75,7 @@ function SignIn() {
               label="Email Address"
               name="email"
               value={user.email}
+              type="email"
               onChange={handleChange}
             />
             <Input
@@ -82,6 +83,7 @@ function SignIn() {
               name="password"
               value={user.password}
               onChange={handleChange}
+              type="password"
             />
 
             <FormControlLabel

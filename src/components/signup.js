@@ -59,12 +59,12 @@ function SignUp() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="md">
+      <Container component="main" maxWidth="lg">
         <CssBaseline />
         <Box
           sx={{
             width: "100%",
-            marginTop: 8,
+            marginTop: 6,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -78,7 +78,7 @@ function SignUp() {
           </Typography>
           <Box
             component="form"
-            sx={{ mt: 1 }}
+            sx={{ mt: 1, px: 10, py: 4, border: "1px solid" }}
             noValidate
             onSubmit={handleSubmit}
           >
@@ -90,7 +90,7 @@ function SignUp() {
                   name="firstname"
                   value={user.firstname}
                   onChange={handleChange}
-                  autoFocus="true"
+                  autoFocus
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -107,6 +107,7 @@ function SignUp() {
               name="mobile"
               value={user.mobile}
               onChange={handleChange}
+              type="number"
             />
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
@@ -141,6 +142,7 @@ function SignUp() {
                   name="postalCode"
                   value={user.postalCode}
                   onChange={handleChange}
+                  type="number"
                 />
               </Grid>
             </Grid>
@@ -148,22 +150,25 @@ function SignUp() {
               label="Email Address"
               name="email"
               value={user.email}
+              type="email"
               onChange={handleChange}
             />
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <Input
-                  label="Email Address"
-                  name="email"
-                  value={user.email}
+                  label="password"
+                  name="password"
+                  type="password"
+                  value={user.password}
                   onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
                 <Input
-                  label="Email Address"
-                  name="email"
-                  value={user.email}
+                  label="Confrim passowrd"
+                  name="confirmPassword"
+                  value={user.confirmPassword}
+                  type="password"
                   onChange={handleChange}
                 />
               </Grid>

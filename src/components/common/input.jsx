@@ -1,12 +1,6 @@
 import React from "react";
 import { TextField } from "@mui/material";
-export default function Input({
-  label,
-  name,
-  value,
-  onChange,
-  autoFocus = false,
-}) {
+export default function Input({ label, type = "text", name, value, onChange }) {
   return (
     <>
       {" "}
@@ -16,12 +10,11 @@ export default function Input({
         fullWidth
         id={name}
         label={label}
-        type={name}
+        type={type}
         name={name}
         value={value}
         autoComplete={name}
         onChange={onChange}
-        autoFocus={autoFocus}
       />
     </>
   );
