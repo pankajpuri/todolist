@@ -42,6 +42,11 @@ class Navbar extends Component {
                   </Link>
                 </li>
                 <li className="nav-item">
+                  <Link className="nav-link" to="/signin">
+                    Signin
+                  </Link>
+                </li>
+                <li className="nav-item">
                   <Link className="nav-link" to="">
                     <i className={this.getStyle()} aria-hidden="true"></i>{" "}
                   </Link>
