@@ -10,6 +10,7 @@ class History extends Component {
         "https://jsonplaceholder.typicode.com/posts"
       );
       this.setState({ datas: data });
+
       // console.log("result: ", data);
       localStorage.setItem("datas", JSON.stringify(data));
     } catch (ex) {
@@ -38,12 +39,15 @@ class History extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.datas.map((data) => (
-                  <tr key={data}>
-                    <td>{data.title}</td>
-                    <td>{data.body}</td>
-                  </tr>
-                ))}
+                {this.state.datas.map(
+                  (data) =>
+                    data.id < 100 && (
+                      <tr key={data.id}>
+                        <td>{data.title}</td>
+                        <td>{data.body}</td>
+                      </tr>
+                    )
+                )}
               </tbody>
             </table>
           </div>

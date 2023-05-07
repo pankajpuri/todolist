@@ -5,11 +5,11 @@ import "bootstrap/dist/js/bootstrap.js";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { Route, Routes } from "react-router-dom";
-import "font-awesome/css/font-awesome.css";
 import Navbar from "./components/navbar";
 import NotFound from "./components/common/notfound";
 import History from "./components/history";
 import Home from "./components/home";
+import "font-awesome/css/font-awesome.css";
 
 function App() {
   return (
