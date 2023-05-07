@@ -180,7 +180,7 @@ function SignUp() {
               sx={{ mt: 3, mb: 2 }}
               variant="contained"
             >
-              Sing Up
+              Sign Up
             </Button>
             <Grid container justifyContent="center">
               <Grid item>

@@ -63,7 +63,7 @@ function SignIn() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sing In
+            Sign In
           </Typography>
           <Box
             component="form"
