@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import Navbar from "./navbar";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
-import AddList from "./addlist";
+//import AddList from "./addlist";
 
 class Home extends Component {
   state = {
@@ -33,7 +32,9 @@ class Home extends Component {
         done: false,
       },
     ],
+    db: [],
   };
+
   handleSubmit = (e) => {
     e.preventDefault();
     const bodyobj = { ...this.state.bodyobj };
@@ -62,16 +63,14 @@ class Home extends Component {
   };
   getClasses = (done) => {
     const css = "fa fa-check-square-o";
-    console.log("result", done);
+    console.log("result", css);
   };
   render() {
     const { tablebody, tableheader } = this.state;
     return (
       <React.Fragment>
-        <Navbar />
-        <ToastContainer />
         {/* <AddList list={tablebody}/> */}
-        <section className="container-fluid pt-5">
+        <section className="container-fluid pt-5" id="home">
           <div className="container mt-5">
             <h1>TodoList</h1>
             <div className="row text-center">
@@ -90,6 +89,7 @@ class Home extends Component {
                 tabIndex="-1"
                 aria-labelledby="exampleModalLabel"
                 aria-hidden="true"
+                style={{ top: "300px" }}
               >
                 <div className="modal-dialog">
                   <div className="modal-content">
@@ -129,8 +129,6 @@ class Home extends Component {
               </div>
             </div>
           </div>
-        </section>
-        <section className="container-fluid pt-5">
           <div className="container mt-5">
             <div className="row">
               <table className="table table-hover table-striped">
@@ -166,6 +164,14 @@ class Home extends Component {
             </div>
           </div>
         </section>
+
+        {/* <div className="conatiner-fluid pt-5">
+          <div className="container mt-5">
+            <div className="row">
+              <TodoListDb />
+            </div>
+          </div>
+        </div> */}
       </React.Fragment>
     );
   }
