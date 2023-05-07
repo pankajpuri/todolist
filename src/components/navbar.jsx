@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link, Outlet } from "react-router-dom";
 class Navbar extends Component {
   state = { notification: [] };
+
   getStyle = () => {
     const css = "fa fa-bell";
     return this.state.notification.length === 0 ? css + "-o" : css;
