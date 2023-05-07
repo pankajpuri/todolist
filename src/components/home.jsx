@@ -63,7 +63,7 @@ class Home extends Component {
   };
   getClasses = (done) => {
     const css = "fa fa-check-square-o";
-    console.log("result", css);
+    console.log("result", css``);
   };
   render() {
     const { tablebody, tableheader } = this.state;

@@ -4,30 +4,27 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-import { Route, Switch, Redirect } from "react-router-dom";
-import Home from "./components/home";
+import { Route, Routes } from "react-router-dom";
 import "font-awesome/css/font-awesome.css";
 import Navbar from "./components/navbar";
 import NotFound from "./components/common/notfound";
 import History from "./components/history";
+import Home from "./components/home";
 
 function App() {
   return (
-    <React.Fragment>
+    <>
       <div className="container-fluid">
-        <Navbar />
         <ToastContainer />
-        <div>
-          <Switch>
-            <Route path="/history" component={History} />
-            <Route path="/home" component={Home} />
-            <Redirect from="/" exact to="/home" />
-            <Route path="/notfound" component={NotFound} />
-            <Redirect to="/notfound" />
-          </Switch>
-        </div>
+        <Routes>
+          <Route path="/" element={<Navbar />}>
+            <Route index element={<Home />} />
+            <Route path="history" element={<History />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
       </div>
-    </React.Fragment>
+    </>
   );
 }
 
