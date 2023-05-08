@@ -92,8 +92,8 @@ function SignUp() {
               <Grid item xs={12} sm={6}>
                 <Input
                   label="First name"
-                  name="firstname"
-                  value={user.firstname}
+                  name="firstName"
+                  value={user.firstName}
                   onChange={handleChange}
                   autoFocus
                 />
