@@ -32,7 +32,7 @@ exports.handler = async function (event, context) {
     }
     //appending rows on the sheet
 
-    await sheet.addRow({
+    const user = await sheet.addRow({
       userId: "23lkj232lkj" + firstName,
       firstName: firstName,
       lastName: lastName,
@@ -43,6 +43,7 @@ exports.handler = async function (event, context) {
 
     return {
       statusCode: 200,
+      body: JSON.stringify({ user }),
     };
   } catch (e) {
     return {

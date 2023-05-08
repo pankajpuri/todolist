@@ -49,19 +49,6 @@ function SignUp() {
     //   email: data.get("email"),
     //   // password:data.get("password")
     // });
-    // await axios
-    //   .post("/.netlify/functions/addUsers", {
-    //     firstName: data.get("firstName"),
-    //     lastName: data.get("lastName"),
-    //     email: data.get("email"),
-    //     password: data.get("password"),
-    //   })
-    //   .then((res) => console.log("got result :", res))
-    //   .catch((err) => console.log("getting error: ", err));
-
-    //call the api to handle opreation
-    //save the data
-    //render page to login dashboard
   };
   const handleChange = (event) => {
     const { name, value } = event.currentTarget;
