@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apiEndpoint = "/.nodeTodoListApi/functions";
 
-async function signUpUsers(users) {
+export default async function signUpUsers(users) {
   const { firstName, lastName, email, password } = users;
   const res = await axios.post(apiEndpoint, {
     firstName,
@@ -12,7 +12,3 @@ async function signUpUsers(users) {
   });
   return res;
 }
-
-export default {
-  signUpUsers,
-};
