@@ -30,11 +30,11 @@ function SignUp() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log("I am in handle submit function-> users:-> ", user);
-    try {
+       const {firstName, lastName, email, password}= user;
       await axios
         .post(
           "/.netlify/functions/addUsers",
-          (user.firstName, user.lastName, user.email, user.password)
+          {firstName, lastName, email, password}
         )
         .then((res) => console.log("got result :", res))
         .catch((err) => console.log("getting error: ", err));
@@ -44,9 +44,7 @@ function SignUp() {
       //   email: data.get("email"),
       //   // password:data.get("password")
       // });
-    } catch (error) {
-      console.log(error);
-    }
+   \
 
     //call the api to handle opreation
     //save the data
