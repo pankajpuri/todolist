@@ -14,6 +14,6 @@ export default async function signUpUsers(user) {
     });
     return res;
   } catch (error) {
-    console.log("error in apis:  ", res);
+    console.log("error in apis:  ", error);
   }
 }
