@@ -39,11 +39,11 @@ function SignUp() {
         .then((res) => console.log("got result :", res))
         .catch((err) => console.log("getting error: ", err));
 
-      const data = new FormData(event.currentTarget);
-      console.log({
-        email: data.get("email"),
-        // password:data.get("password")
-      });
+      // const data = new FormData(event.currentTarget);
+      // console.log({
+      //   email: data.get("email"),
+      //   // password:data.get("password")
+      // });
     } catch (error) {
       console.log(error);
     }
