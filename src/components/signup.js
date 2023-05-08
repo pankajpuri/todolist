@@ -30,22 +30,21 @@ function SignUp() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log("I am in handle submit function-> users:-> ", user);
-    const { firstName, lastName, email, password } = user;
-    await axios
-      .post("/.netlify/functions/addUsers", {
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        password: password,
-      })
-      .then((res) => console.log("got result :", res))
-      .catch((err) => console.log("getting error: ", err));
-
-    // const data = new FormData(event.currentTarget);
+    //const { firstName, lastName, email, password } = user;
+    const data = new FormData(event.currentTarget);
     // console.log({
     //   email: data.get("email"),
     //   // password:data.get("password")
     // });
+    await axios
+      .post("/.netlify/functions/addUsers", {
+        firstName: data.get("fristName"),
+        lastName: data.get("lastName"),
+        email: data.get("email"),
+        password: data.get("password"),
+      })
+      .then((res) => console.log("got result :", res))
+      .catch((err) => console.log("getting error: ", err));
 
     //call the api to handle opreation
     //save the data
