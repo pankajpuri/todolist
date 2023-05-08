@@ -37,7 +37,7 @@ function SignUp() {
     //   // password:data.get("password")
     // });
     await axios
-      .post("/.todolist/hello-world/addUsers", {
+      .post("/.todolist/functions/addUsers", {
         firstName: data.get("fristName"),
         lastName: data.get("lastName"),
         email: data.get("email"),

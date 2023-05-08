@@ -1,8 +1,8 @@
 //need to require the npm module.
 //https://www.npmjs.com/package/google-spreadsheet/v/3.3.0
 const { GoogleSpreadsheet } = require("google-spreadsheet");
-
-exports.handler = async function (event, context) {
+const { schedule } = require("@netlify/functions");
+exports.handler = schedule("* * * * *", async function (event, context) {
   //uses the sheet based on sheet ID
   const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID);
   //fields used on frontend. Key/values need to be parsed in order to be used or will return as undefined. If you assign the object to a variable on the frontend you will not need to parse on backend.
@@ -51,4 +51,4 @@ exports.handler = async function (event, context) {
       }),
     };
   }
-};
+});
