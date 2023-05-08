@@ -31,12 +31,14 @@ function SignUp() {
     event.preventDefault();
     console.log("I am in handle submit function-> users:-> ", user);
     try {
-      const res = await axios.post(
-        "/.netlify/functions/addUsers",
-        (user.firstName, user.lastName, user.email, user.password)
-      );
-      if (res) console.log("res", res);
-      else console.log("throwing error res:", res);
+      await axios
+        .post(
+          "/.netlify/functions/addUsers",
+          (user.firstName, user.lastName, user.email, user.password)
+        )
+        .then((res) => console.log("got result :", res))
+        .catch((err) => console.log("getting error: ", err));
+
       const data = new FormData(event.currentTarget);
       console.log({
         email: data.get("email"),
