@@ -18,7 +18,7 @@ exports.handler = async function (event, context) {
     await doc.loadInfo();
 
     //index of the sheet being used (sheets are zero indexed)
-    const sheet = doc.sheetsByTitle["users"];
+    const sheet = doc.sheetsByTitle["test"];
 
     const rows = await sheet.getRows();
     const participant = rows.find((r) => r.email === email);
