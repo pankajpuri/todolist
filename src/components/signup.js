@@ -28,7 +28,7 @@ function SignUp() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("I am in handle submit function");
+    console.log("I am in handle submit function-> users:-> ", user);
     try {
       const res = await signUpUsers(user);
       console.log("res", res);
