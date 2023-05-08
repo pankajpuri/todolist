@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { useState } from "react";
 import {
   Avatar,
@@ -14,7 +15,7 @@ import {
 import LockOpenIcon from "@mui/icons-material/LockOpen";
 import { createTheme } from "@mui/material/styles";
 import Input from "./common/input";
-import signUpUsers from "./apis/apis";
+//import signUpUsers from "./apis/apis";
 
 const theme = createTheme();
 
@@ -30,8 +31,12 @@ function SignUp() {
     event.preventDefault();
     console.log("I am in handle submit function-> users:-> ", user);
     try {
-      const res = await signUpUsers(user);
-      console.log("res", res);
+      const res = await axios.post(
+        "/.netlify/functions/addUsers",
+        (user.firstName, user.lastName, user.email, user.password)
+      );
+      if (res) console.log("res", res);
+      else console.log("throwing error res:", res);
       const data = new FormData(event.currentTarget);
       console.log({
         email: data.get("email"),
