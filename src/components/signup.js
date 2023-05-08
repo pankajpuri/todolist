@@ -47,10 +47,12 @@ function SignUp() {
   };
   const handleChange = (event) => {
     const { name, value } = event.currentTarget;
+
     setUser((prevUser) => ({
       ...prevUser,
       [name]: value,
     }));
+    console.log("users", user);
   };
 
   return (
