@@ -33,10 +33,10 @@ function SignUp() {
     const { firstName, lastName, email, password } = user;
     await axios
       .post("/.netlify/functions/addUsers", {
-        firstName,
-        lastName,
-        email,
-        password,
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        password: password,
       })
       .then((res) => console.log("got result :", res))
       .catch((err) => console.log("getting error: ", err));
