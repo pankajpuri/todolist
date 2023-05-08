@@ -31,9 +31,9 @@ exports.handler = async function (event, context) {
       };
     }
     //appending rows on the sheet
-    const id = "23lkj232lkj" + firstName;
+
     await sheet.addRow({
-      userId: id,
+      userId: "23lkj232lkj",
       firstName: firstName,
       lastName: lastName,
       email: email,
