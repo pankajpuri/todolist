@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import signUpUsers from "./apis/apis";
 import {
   Avatar,
   Box,
@@ -15,6 +14,7 @@ import {
 import LockOpenIcon from "@mui/icons-material/LockOpen";
 import { createTheme } from "@mui/material/styles";
 import Input from "./common/input";
+import signUpUsers from "./apis/apis";
 
 const theme = createTheme();
 
@@ -26,15 +26,18 @@ function SignUp() {
     password: "",
   });
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const res = signUpUsers(user);
-    console.log(res);
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      // password:data.get("password")
-    });
+    console.log("I am in handle submit function");
+    try {
+      const res = await signUpUsers(user);
+      console.log("res", res);
+      const data = new FormData(event.currentTarget);
+      console.log({
+        email: data.get("email"),
+        // password:data.get("password")
+      });
+    } catch (error) {}
 
     //call the api to handle opreation
     //save the data
