@@ -33,7 +33,7 @@ exports.handler = async function (event, context) {
     //appending rows on the sheet
 
     await sheet.addRow({
-      userId: "23lkj232lkj",
+      userId: "23lkj232lkj" + firstName,
       firstName: firstName,
       lastName: lastName,
       email: email,
