@@ -37,7 +37,7 @@ function SignUp() {
     //   // password:data.get("password")
     // });
     await axios
-      .post("/.todolist/functions/addUsers", {
+      .post("/.netlify/functions/addUsers", {
         firstName: data.get("fristName"),
         lastName: data.get("lastName"),
         email: data.get("email"),
