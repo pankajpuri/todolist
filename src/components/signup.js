@@ -30,21 +30,34 @@ function SignUp() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log("I am in handle submit function-> users:-> ", user);
-    //const { firstName, lastName, email, password } = user;
-    const data = new FormData(event.currentTarget);
+
+    //const data = new FormData(event.currentTarget);
+    try {
+      const { firstName, lastName, email, password } = user;
+      //const data = new FormData(event.currentTarget);
+      const res = await axios.post("/.netlify/functions/addUsers", {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        password: password,
+      });
+      console.log("got res :", res);
+    } catch (error) {
+      console.log("getting error", error);
+    }
     // console.log({
     //   email: data.get("email"),
     //   // password:data.get("password")
     // });
-    await axios
-      .post("/.netlify/functions/addUsers", {
-        firstName: data.get("firstName"),
-        lastName: data.get("lastName"),
-        email: data.get("email"),
-        password: data.get("password"),
-      })
-      .then((res) => console.log("got result :", res))
-      .catch((err) => console.log("getting error: ", err));
+    // await axios
+    //   .post("/.netlify/functions/addUsers", {
+    //     firstName: data.get("firstName"),
+    //     lastName: data.get("lastName"),
+    //     email: data.get("email"),
+    //     password: data.get("password"),
+    //   })
+    //   .then((res) => console.log("got result :", res))
+    //   .catch((err) => console.log("getting error: ", err));
 
     //call the api to handle opreation
     //save the data
