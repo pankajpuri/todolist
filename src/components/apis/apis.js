@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiEndpoint = "/.nodeTodoListApi/functions";
+const apiEndpoint = "/.netlify/functions/addUsers";
 
 export default async function signUpUsers(user) {
   const { firstName, lastName, email, password } = user;

@@ -36,7 +36,7 @@ exports.handler = async function (event, context) {
     const reminderAt = null;
     //appending rows on the sheet
     await sheet.addRow({
-      userId: "23lkj232lkj" + firstName,
+      userId: "23lkj232lkj" + firstname,
       firstName: firstName,
       lastName: lastName,
       email: email,
@@ -49,6 +49,7 @@ exports.handler = async function (event, context) {
     };
   } catch (e) {
     return {
+      statusCode: 500,
       body: JSON.stringify({
         message: e.message,
       }),
