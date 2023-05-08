@@ -36,7 +36,7 @@ exports.handler = async function (event, context) {
     const reminderAt = null;
     //appending rows on the sheet
     await sheet.addRow({
-      userId: userId,
+      userId: "23lkj232lkj" + firstName,
       firstName: firstName,
       lastName: lastName,
       email: email,
