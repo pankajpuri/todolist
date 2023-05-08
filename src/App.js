@@ -20,15 +20,14 @@ function App() {
     <>
       <div className="container-fluid">
         <ToastContainer />
+        <Navbar />
         <Routes>
-          <Route path="/" element={<Navbar />}>
-            <Route index element={<Home />} />
-            <Route path="signin" element={<SignIn />} />
-            <Route path="signup" element={<SignUp />} />
-            <Route path="logout" element={<Logout />} />
-            <Route path="history" element={<History />} />
-            <Route path="*" element={<NotFound />} />
-          </Route>
+          <Route index element={<Home />} />
+          <Route path="signin" element={<SignIn />} />
+          <Route path="signup" element={<SignUp />} />
+          <Route path="logout" element={<Logout />} />
+          <Route path="history" element={<History />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </div>

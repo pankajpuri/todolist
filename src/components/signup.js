@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import signUpUsers from "./apis/apis";
 import {
   Avatar,
   Box,
@@ -27,11 +28,17 @@ function SignUp() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const res = signUpUsers(user);
+    console.log(res);
     const data = new FormData(event.currentTarget);
     console.log({
       email: data.get("email"),
       // password:data.get("password")
     });
+
+    //call the api to handle opreation
+    //save the data
+    //render page to login dashboard
   };
   const handleChange = (event) => {
     const { name, value } = event.currentTarget;
@@ -43,11 +50,12 @@ function SignUp() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="lg">
+      <Container component="main" maxWidth="lg" sx={{ minHeight: "500px" }}>
         <CssBaseline />
         <Box
           sx={{
             width: "100%",
+            height: "50%",
             marginTop: 6,
             display: "flex",
             flexDirection: "column",
@@ -65,7 +73,6 @@ function SignUp() {
             sx={{
               mt: 1,
             }}
-            noValidate
             onSubmit={handleSubmit}
           >
             {" "}
