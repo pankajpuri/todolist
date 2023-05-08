@@ -37,7 +37,9 @@ function SignUp() {
         email: data.get("email"),
         // password:data.get("password")
       });
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
 
     //call the api to handle opreation
     //save the data
