@@ -18,7 +18,7 @@ exports.handler = async function (event, context) {
     await doc.loadInfo();
 
     //index of the sheet being used (sheets are zero indexed)
-    const sheet = doc.sheetsByTitle["test"];
+    const sheet = doc.sheetsByTitle["todolistUsers"];
 
     const rows = await sheet.getRows();
     const participant = rows.find((r) => r.email === email);
@@ -32,7 +32,7 @@ exports.handler = async function (event, context) {
     }
     //appending rows on the sheet
     await sheet.addRow({
-      userId: "23lkj232lkj",
+      userId: "23lkj232lkj" + firstName,
       firstName: firstName,
       lastName: lastName,
       email: email,
